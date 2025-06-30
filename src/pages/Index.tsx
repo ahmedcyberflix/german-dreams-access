@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { GraduationCap, Users, Award, CheckCircle, Star, ArrowRight } from 'lucide-react';
+import { GraduationCap, Users, Award, CheckCircle, Star, ArrowRight, Check } from 'lucide-react';
 import Layout from '../components/Layout';
 import LeadForm from '../components/LeadForm';
 
@@ -45,6 +44,44 @@ const Index = () => {
     { name: "TU Chemnitz", logo: "📚" },
     { name: "University of Bonn", logo: "🏆" },
     { name: "TU Dresden", logo: "🔬" }
+  ];
+
+  const expertise = [
+    {
+      title: "Study in Germany & Europe",
+      services: [
+        "Bachelor's & Master's Admissions",
+        "University Shortlisting & Direct Applications",
+        "Uni-Assist & Application Portal Support",
+        "Scholarship Assistance & Eligibility Guidance"
+      ]
+    },
+    {
+      title: "Germany Ausbildung Programs",
+      services: [
+        "Ausbildung Placement in IT, Healthcare",
+        "German Language Training & Visa Support",
+        "Employer Sponsorship Assistance",
+        "Scholarship Assistance & Eligibility Guidance"
+      ]
+    },
+    {
+      title: "Germany Skilled Worker Visa",
+      services: [
+        "Chancenkarte (Opportunity Card)",
+        "Visa Processing & Documentation Assistance",
+        "Job Search Support & Employer Matching",
+        "Relocation & Settlement Assistance"
+      ]
+    },
+    {
+      title: "Europe Visit Visa",
+      services: [
+        "Complete Visa Documentation",
+        "Travel Insurance & Flight Itinerary Assistance",
+        "Embassy Appointment Scheduling"
+      ]
+    }
   ];
 
   const testimonials = [
@@ -244,6 +281,34 @@ const Index = () => {
               <div key={index} className="text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
                 <div className="text-4xl mb-2">{uni.logo}</div>
                 <h3 className="text-sm font-semibold text-gray-900">{uni.name}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Expertise Section */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-blue-600">Our Expertise - </span>
+              <span className="text-orange-400">How We Help You?</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {expertise.map((category, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <h3 className="text-lg font-semibold text-blue-600 mb-4 text-center">{category.title}</h3>
+                <ul className="space-y-3">
+                  {category.services.map((service, serviceIndex) => (
+                    <li key={serviceIndex} className="flex items-start">
+                      <Check className="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm leading-relaxed">{service}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
