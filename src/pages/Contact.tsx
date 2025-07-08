@@ -9,45 +9,30 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+92 XXX XXXXXXX", "Available 9 AM - 9 PM PST"],
+      details: ["+49 1573 7304219", "Available 9 AM - 9 PM PST"],
       action: "Call Now"
     },
     {
       icon: MessageCircle,
       title: "WhatsApp",
-      details: ["+92 XXX XXXXXXX", "24/7 Quick Response"],
+      details: ["+49 1573 7304219", "24/7 Quick Response"],
       action: "Chat Now"
-    },
-    {
-      icon: Mail,
-      title: "Email",
-      details: ["info@germanstudy.com", "Response within 24 hours"],
-      action: "Send Email"
-    },
-    {
-      icon: MapPin,
-      title: "Location",
-      details: ["Pakistan", "Serving students nationwide"],
-      action: "View Coverage"
     }
   ];
 
   const openWhatsApp = () => {
     const message = encodeURIComponent("Hi! I found your contact information and I'm interested in German public university admissions. Can we discuss my options?");
-    const whatsappUrl = `https://wa.me/923001234567?text=${message}`;
+    const whatsappUrl = `https://wa.me/4915737304219?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
 
   const handleContactClick = (method: string) => {
     switch (method) {
       case 'Phone':
-        window.location.href = 'tel:+923001234567';
+        window.location.href = 'tel:+4915737304219';
         break;
       case 'WhatsApp':
         openWhatsApp();
-        break;
-      case 'Email':
-        window.location.href = 'mailto:info@germanstudy.com?subject=Inquiry about German University Admission';
         break;
       default:
         break;
@@ -76,7 +61,7 @@ const Contact = () => {
             <p className="text-xl text-gray-600">Multiple ways to reach us - choose what's convenient for you</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
             {contactInfo.map((contact, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center">
                 <contact.icon className="w-12 h-12 text-blue-600 mx-auto mb-4" />
@@ -226,7 +211,7 @@ const Contact = () => {
               Chat on WhatsApp Now
             </button>
             <button
-              onClick={() => window.location.href = 'tel:+923001234567'}
+              onClick={() => window.location.href = 'tel:+4915737304219'}
               className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300"
             >
               Call Us Directly
