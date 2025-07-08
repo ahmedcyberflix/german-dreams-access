@@ -14,7 +14,7 @@ const Students = () => {
       previousGPA: "2.3",
       admissionYear: "2023",
       image: "👨‍💻",
-      quote: "I never thought I could get into a German university with my low GPA. GermanStudy not only helped me get admission but also guided me through the entire visa process. Now I'm studying at one of Germany's top technical universities!",
+      quote: "I never thought I could get into a German university with my low GPA. Gradziet not only helped me get admission but also guided me through the entire visa process. Now I'm studying at one of Germany's top technical universities!",
       details: "Ahmed had a challenging academic background with a 2.3 GPA from his bachelor's degree. Through our specialized approach, we helped him highlight his practical skills and work experience to secure admission to TU Berlin's competitive Computer Science program."
     },
     {
@@ -26,7 +26,7 @@ const Students = () => {
       previousGPA: "2.7",
       admissionYear: "2023",
       image: "👩‍🔬",
-      quote: "After being rejected by 3 other consultants who said my GPA was too low, GermanStudy gave me hope. They found the perfect university for my profile and helped me craft an amazing SOP. I'm now pursuing my Master's in Germany!",
+      quote: "After being rejected by 3 other consultants who said my GPA was too low, Gradziet gave me hope. They found the perfect university for my profile and helped me craft an amazing SOP. I'm now pursuing my Master's in Germany!",
       details: "Fatima faced multiple rejections from consultants who focused only on her GPA. We identified universities that valued practical experience and helped her showcase her engineering projects and internships effectively."
     },
     {
@@ -38,7 +38,7 @@ const Students = () => {
       previousGPA: "2.5",
       admissionYear: "2024",
       image: "🚗",
-      quote: "Professional, honest, and they deliver what they promise. The team at GermanStudy went above and beyond to help me get admission. Their guidance on visa preparation was exceptional. Highly recommended!",
+      quote: "Professional, honest, and they deliver what they promise. The team at Gradziet went above and beyond to help me get admission. Their guidance on visa preparation was exceptional. Highly recommended!",
       details: "Ali's passion for automotive engineering was evident despite his academic struggles. We connected him with University of Stuttgart's renowned automotive program and helped him demonstrate his genuine interest through a compelling application."
     },
     {
@@ -50,7 +50,7 @@ const Students = () => {
       previousGPA: "2.4",
       admissionYear: "2024",
       image: "👩‍💼",
-      quote: "Coming from a small city, I thought studying abroad was impossible. GermanStudy made it happen! They supported me every step of the way, from university selection to visa approval. I'm grateful for their dedication.",
+      quote: "Coming from a small city, I thought studying abroad was impossible. Gradziet made it happen! They supported me every step of the way, from university selection to visa approval. I'm grateful for their dedication.",
       details: "Sana's background from a smaller city posed unique challenges. We helped her navigate the application process, prepare for language requirements, and secure financial documentation for her visa application."
     },
     {
@@ -62,7 +62,7 @@ const Students = () => {
       previousGPA: "2.6",
       admissionYear: "2023",
       image: "🔬",
-      quote: "I had a gap year and a below-average GPA, but GermanStudy saw potential in me. They helped me turn my weaknesses into strengths in my application. Now I'm doing research in Germany!",
+      quote: "I had a gap year and a below-average GPA, but Gradziet saw potential in me. They helped me turn my weaknesses into strengths in my application. Now I'm doing research in Germany!",
       details: "Usman's gap year and academic challenges required careful handling. We helped him frame his gap year as a period of growth and preparation, ultimately leading to his successful admission to a research-focused program."
     },
     {
@@ -74,7 +74,7 @@ const Students = () => {
       previousGPA: "2.8",
       admissionYear: "2024",
       image: "🌍",
-      quote: "The transparency and honesty of GermanStudy impressed me from day one. They never made false promises and delivered exactly what they said they would. I'm now studying in Frankfurt!",
+      quote: "The transparency and honesty of Gradziet impressed me from day one. They never made false promises and delivered exactly what they said they would. I'm now studying in Frankfurt!",
       details: "Ayesha appreciated our transparent approach and realistic expectations. We helped her leverage her language skills and cultural background to strengthen her application for international business programs."
     }
   ];

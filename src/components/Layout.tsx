@@ -26,7 +26,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center">
-              <span className="text-2xl font-bold text-blue-600">GermanStudy</span>
+              <span className="text-2xl font-bold text-blue-600">Gradziet</span>
               <span className="text-sm text-gray-600 ml-2 hidden sm:block">Public Universities Only</span>
             </Link>
 
@@ -88,7 +88,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-bold mb-4">GermanStudy</h3>
+              <h3 className="text-2xl font-bold mb-4">Gradziet</h3>
               <p className="text-gray-300 mb-4">
                 Helping Pakistani students get admission to Germany's public universities - 
                 no private institutions, no false promises.
@@ -119,7 +119,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center">
             <p className="text-gray-400">
-              © 2024 GermanStudy. All rights reserved. | Public Universities Only
+              © 2024 Gradziet. All rights reserved. | Public Universities Only
             </p>
           </div>
         </div>

@@ -90,7 +90,7 @@ const Index = () => {
       city: "Karachi",
       university: "TU Berlin",
       gpa: "2.3",
-      quote: "I never thought I could get into a German university with my low GPA. GermanStudy made it possible!"
+      quote: "I never thought I could get into a German university with my low GPA. Gradziet made it possible!"
     },
     {
       name: "Fatima Khan",

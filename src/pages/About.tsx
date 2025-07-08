@@ -10,7 +10,7 @@ const About = () => {
       <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">About GermanStudy</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">About Gradziet</h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
               Two brothers on a mission to make German public education accessible for Pakistani students
             </p>
@@ -25,7 +25,7 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <p className="text-lg text-gray-700 mb-6">
-                GermanStudy was founded by two brothers who witnessed firsthand the struggles of Pakistani students 
+                Gradziet was founded by two brothers who witnessed firsthand the struggles of Pakistani students 
                 trying to get quality education abroad. We saw too many students being misled by consultants who 
                 promised them admission to expensive private institutions, often with hidden costs and poor outcomes.
               </p>
@@ -35,7 +35,7 @@ const About = () => {
                 that even students with lower GPAs could secure admission with the right guidance and approach.
               </p>
               <p className="text-lg text-gray-700">
-                This revelation led us to create GermanStudy - a consultancy that exclusively focuses on public 
+                This revelation led us to create Gradziet - a consultancy that exclusively focuses on public 
                 universities and maintains complete transparency throughout the process. We believe every student 
                 deserves honest guidance and affordable education opportunities.
               </p>
