@@ -4,7 +4,7 @@ import React from 'react';
 const WhatsAppButton = () => {
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Hi! I'm interested in getting admission to German public universities. Can you help me?");
-    const whatsappUrl = `https://wa.me/923001234567?text=${message}`;
+    const whatsappUrl = `https://wa.me/4915737304219?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
 
