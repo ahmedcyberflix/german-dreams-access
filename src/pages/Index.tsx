@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { GraduationCap, Users, Award, CheckCircle, Star, ArrowRight, Check } from 'lucide-react';
+import { GraduationCap, Users, Award, CheckCircle, Star, ArrowRight, Check, Sparkles } from 'lucide-react';
 import Layout from '../components/Layout';
 import LeadForm from '../components/LeadForm';
+import { ScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Index = () => {
   const scrollToForm = () => {
@@ -138,230 +139,317 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="gradient-hero text-white py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 animate-gradient-x bg-300%"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-              Get Admission in Germany's Public Universities
-              <span className="block text-orange-400 mt-2">Even with a Low GPA</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              We only help students get into public universities — no private institutions, no false promises.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={scrollToForm}
-                className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
-              >
-                Start Your Free Assessment
-              </button>
-              <button
-                onClick={openWhatsApp}
-                className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300"
-              >
-                Chat with Advisor
-              </button>
-            </div>
+            <ScrollAnimation animation="fade-in-down">
+              <div className="flex justify-center mb-6">
+                <Sparkles className="w-16 h-16 text-secondary animate-float" />
+              </div>
+            </ScrollAnimation>
+            <ScrollAnimation animation="fade-in-up" delay={200}>
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Get Admission in Germany's 
+                <span className="block bg-gradient-to-r from-secondary to-secondary-glow bg-clip-text text-transparent mt-2">
+                  Public Universities
+                </span>
+                <span className="block text-3xl md:text-4xl text-white/90 mt-4">Even with a Low GPA</span>
+              </h1>
+            </ScrollAnimation>
+            <ScrollAnimation animation="fade-in-up" delay={400}>
+              <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-white/90 leading-relaxed">
+                We only help students get into public universities — no private institutions, no false promises.
+              </p>
+            </ScrollAnimation>
+            <ScrollAnimation animation="scale-in" delay={600}>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <button
+                  onClick={scrollToForm}
+                  className="btn-secondary py-4 px-8 rounded-xl font-semibold text-lg hover-scale hover-glow"
+                >
+                  Start Your Free Assessment
+                </button>
+                <button
+                  onClick={openWhatsApp}
+                  className="btn-glass py-4 px-8 rounded-xl font-semibold text-lg border-2 border-white/30 hover:border-white/50"
+                >
+                  Chat with Advisor
+                </button>
+              </div>
+            </ScrollAnimation>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
       </section>
 
       {/* Who We Help */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 gradient-subtle">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Who We Help</h2>
-            <p className="text-xl text-gray-600">We specialize in helping Pakistani students achieve their German education dreams</p>
-          </div>
+          <ScrollAnimation animation="fade-in-up">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-6">
+                Who We Help
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                We specialize in helping Pakistani students achieve their German education dreams
+              </p>
+            </div>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whoWeHelp.map((item, index) => (
-              <div key={index} className="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                <item.icon className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
-              </div>
+              <ScrollAnimation key={index} animation="fade-in-up" delay={index * 100}>
+                <div className="text-center p-8 bg-card rounded-2xl shadow-elegant hover-lift hover-glow group">
+                  <div className="mb-6 relative">
+                    <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center group-hover:animate-bounce-gentle">
+                      <item.icon className="w-8 h-8 text-white" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>
+              </ScrollAnimation>
             ))}
           </div>
         </div>
       </section>
 
       {/* Why Only Public Universities */}
-      <section className="py-16">
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Only Public Universities?</h2>
-            <p className="text-xl text-gray-600">Here's why we focus exclusively on public institutions</p>
-          </div>
+          <ScrollAnimation animation="fade-in-up">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-accent to-accent-glow bg-clip-text text-transparent mb-6">
+                Why Only Public Universities?
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Here's why we focus exclusively on public institutions
+              </p>
+            </div>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {whyPublicOnly.map((item, index) => (
-              <div key={index} className="flex items-start p-6 bg-blue-50 rounded-lg">
-                <CheckCircle className="w-6 h-6 text-green-500 mr-4 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.desc}</p>
+              <ScrollAnimation key={index} animation="fade-in-left" delay={index * 150}>
+                <div className="flex items-start p-8 bg-gradient-to-br from-accent/5 to-accent/10 rounded-2xl border border-accent/20 hover-lift">
+                  <div className="w-12 h-12 bg-gradient-to-br from-accent to-accent-glow rounded-xl flex items-center justify-center mr-6 flex-shrink-0">
+                    <CheckCircle className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                  </div>
                 </div>
-              </div>
+              </ScrollAnimation>
             ))}
           </div>
         </div>
       </section>
 
       {/* Our Process */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 gradient-subtle">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our 5-Step Process</h2>
-            <p className="text-xl text-gray-600">A clear roadmap to your German education</p>
-          </div>
+          <ScrollAnimation animation="fade-in-up">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-secondary to-secondary-glow bg-clip-text text-transparent mb-6">
+                Our 5-Step Process
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                A clear roadmap to your German education
+              </p>
+            </div>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             {process.map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  {item.step}
+              <ScrollAnimation key={index} animation="scale-in" delay={index * 100}>
+                <div className="text-center relative">
+                  <div className="gradient-primary w-20 h-20 rounded-2xl flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-primary hover-scale">
+                    {item.step}
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                  {index < process.length - 1 && (
+                    <ArrowRight className="w-6 h-6 text-primary mx-auto mt-6 hidden md:block animate-float" />
+                  )}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
-                {index < process.length - 1 && (
-                  <ArrowRight className="w-6 h-6 text-gray-400 mx-auto mt-4 hidden md:block" />
-                )}
-              </div>
+              </ScrollAnimation>
             ))}
           </div>
         </div>
       </section>
 
       {/* Success Stories */}
-      <section className="py-16">
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Success Stories</h2>
-            <p className="text-xl text-gray-600">Real students, real results</p>
-          </div>
+          <ScrollAnimation animation="fade-in-up">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-6">
+                Success Stories
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Real students, real results
+              </p>
+            </div>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex items-center mb-4">
-                  <div className="bg-blue-100 rounded-full w-12 h-12 flex items-center justify-center mr-4">
-                    <span className="text-blue-600 font-bold">{testimonial.name.charAt(0)}</span>
+              <ScrollAnimation key={index} animation="fade-in-up" delay={index * 150}>
+                <div className="bg-card p-8 rounded-2xl shadow-elegant hover-lift border border-border/50 group">
+                  <div className="flex items-center mb-6">
+                    <div className="gradient-primary rounded-xl w-14 h-14 flex items-center justify-center mr-4 group-hover:animate-pulse-glow">
+                      <span className="text-white font-bold text-lg">{testimonial.name.charAt(0)}</span>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-foreground">{testimonial.name}</h3>
+                      <p className="text-muted-foreground text-sm">{testimonial.city}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
-                    <p className="text-gray-600 text-sm">{testimonial.city}</p>
+                  <p className="text-foreground mb-6 leading-relaxed italic">"{testimonial.quote}"</p>
+                  <div className="border-t border-border pt-4 space-y-2">
+                    <p className="text-sm text-muted-foreground">
+                      <span className="font-semibold text-foreground">University:</span> {testimonial.university}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      <span className="font-semibold text-foreground">Previous GPA:</span> {testimonial.gpa}
+                    </p>
                   </div>
                 </div>
-                <p className="text-gray-700 mb-4">"{testimonial.quote}"</p>
-                <div className="border-t pt-4">
-                  <p className="text-sm text-gray-600">
-                    <span className="font-semibold">University:</span> {testimonial.university}
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    <span className="font-semibold">Previous GPA:</span> {testimonial.gpa}
-                  </p>
-                </div>
-              </div>
+              </ScrollAnimation>
             ))}
           </div>
         </div>
       </section>
 
       {/* Featured Universities */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 gradient-subtle">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Universities</h2>
-            <p className="text-xl text-gray-600">Top German public universities we work with</p>
-          </div>
+          <ScrollAnimation animation="fade-in-up">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-accent to-accent-glow bg-clip-text text-transparent mb-6">
+                Featured Universities
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Top German public universities we work with
+              </p>
+            </div>
+          </ScrollAnimation>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {universities.map((uni, index) => (
-              <div key={index} className="text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                <div className="text-4xl mb-2">{uni.logo}</div>
-                <h3 className="text-sm font-semibold text-gray-900">{uni.name}</h3>
-              </div>
+              <ScrollAnimation key={index} animation="scale-in" delay={index * 50}>
+                <div className="text-center p-6 bg-card rounded-2xl shadow-elegant hover-lift hover-glow group border border-border/30">
+                  <div className="text-5xl mb-4 group-hover:animate-bounce-gentle">{uni.logo}</div>
+                  <h3 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">{uni.name}</h3>
+                </div>
+              </ScrollAnimation>
             ))}
           </div>
         </div>
       </section>
 
       {/* Our Expertise Section */}
-      <section className="py-16">
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="text-blue-600">Our Expertise - </span>
-              <span className="text-orange-400">How We Help You?</span>
-            </h2>
-          </div>
+          <ScrollAnimation animation="fade-in-up">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Our Expertise - </span>
+                <span className="bg-gradient-to-r from-secondary to-secondary-glow bg-clip-text text-transparent">How We Help You?</span>
+              </h2>
+            </div>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {expertise.map((category, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                <h3 className="text-lg font-semibold text-blue-600 mb-4 text-center">{category.title}</h3>
-                <ul className="space-y-3">
-                  {category.services.map((service, serviceIndex) => (
-                    <li key={serviceIndex} className="flex items-start">
-                      <Check className="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700 text-sm leading-relaxed">{service}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <ScrollAnimation key={index} animation="fade-in-up" delay={index * 100}>
+                <div className="bg-card p-8 rounded-2xl shadow-elegant hover-lift border border-border/50 group">
+                  <h3 className="text-xl font-bold text-primary mb-6 text-center group-hover:text-primary-glow transition-colors">
+                    {category.title}
+                  </h3>
+                  <ul className="space-y-4">
+                    {category.services.map((service, serviceIndex) => (
+                      <li key={serviceIndex} className="flex items-start">
+                        <div className="w-6 h-6 bg-gradient-to-br from-accent to-accent-glow rounded-lg flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                          <Check className="w-4 h-4 text-white" />
+                        </div>
+                        <span className="text-foreground text-sm leading-relaxed">{service}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </ScrollAnimation>
             ))}
           </div>
         </div>
       </section>
 
       {/* Lead Capture Form */}
-      <section id="lead-form" className="py-16">
+      <section id="lead-form" className="py-20 gradient-subtle">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <LeadForm />
+          <ScrollAnimation animation="scale-in">
+            <LeadForm />
+          </ScrollAnimation>
         </div>
       </section>
 
       {/* FAQs */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600">Get answers to common questions</p>
-          </div>
+          <ScrollAnimation animation="fade-in-up">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-6">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Get answers to common questions
+              </p>
+            </div>
+          </ScrollAnimation>
 
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
-              </div>
+              <ScrollAnimation key={index} animation="fade-in-left" delay={index * 100}>
+                <div className="bg-card p-8 rounded-2xl shadow-elegant border border-border/50 hover-lift">
+                  <h3 className="text-xl font-bold text-foreground mb-4">{faq.question}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                </div>
+              </ScrollAnimation>
             ))}
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 bg-blue-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            We've helped students with low GPA get into Germany's top public universities.
-          </h2>
-          <p className="text-xl mb-8">Let's help you too.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={scrollToForm}
-              className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
-            >
-              Start Your Free Assessment
-            </button>
-            <button
-              onClick={openWhatsApp}
-              className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300"
-            >
-              Chat on WhatsApp
-            </button>
-          </div>
+      <section className="py-24 gradient-hero text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-secondary/30 animate-gradient-x bg-300%"></div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <ScrollAnimation animation="fade-in-up">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              We've helped students with low GPA get into Germany's top public universities.
+            </h2>
+          </ScrollAnimation>
+          <ScrollAnimation animation="fade-in-up" delay={200}>
+            <p className="text-2xl mb-12 text-white/90">Let's help you too.</p>
+          </ScrollAnimation>
+          <ScrollAnimation animation="scale-in" delay={400}>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button
+                onClick={scrollToForm}
+                className="btn-secondary py-4 px-8 rounded-xl font-semibold text-lg hover-scale hover-glow"
+              >
+                Start Your Free Assessment
+              </button>
+              <button
+                onClick={openWhatsApp}
+                className="btn-glass py-4 px-8 rounded-xl font-semibold text-lg border-2 border-white/30 hover:border-white/50"
+              >
+                Chat on WhatsApp
+              </button>
+            </div>
+          </ScrollAnimation>
         </div>
       </section>
     </Layout>
