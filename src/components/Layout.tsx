@@ -1,13 +1,15 @@
 
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Menu, X, Phone, Mail, MapPin, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 import WhatsAppButton from './WhatsAppButton';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -18,6 +20,19 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   ];
 
   const isActive = (href: string) => location.pathname === href;
+
+  const handleNavigation = (href: string) => {
+    if (location.pathname === href) return;
+    
+    setIsLoading(true);
+    setIsMenuOpen(false);
+    
+    setTimeout(() => {
+      navigate(href);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setIsLoading(false);
+    }, 1000);
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -33,9 +48,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
               {navigation.map((item) => (
-                <Link
+                <button
                   key={item.name}
-                  to={item.href}
+                  onClick={() => handleNavigation(item.href)}
                   className={`text-sm font-medium transition-colors ${
                     isActive(item.href)
                       ? 'text-blue-600 border-b-2 border-blue-600'
@@ -43,7 +58,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   }`}
                 >
                   {item.name}
-                </Link>
+                </button>
               ))}
             </nav>
 
@@ -62,18 +77,17 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
               {navigation.map((item) => (
-                <Link
+                <button
                   key={item.name}
-                  to={item.href}
-                  className={`block px-3 py-2 text-base font-medium transition-colors ${
+                  onClick={() => handleNavigation(item.href)}
+                  className={`w-full text-left block px-3 py-2 text-base font-medium transition-colors ${
                     isActive(item.href)
                       ? 'text-blue-600 bg-blue-50'
                       : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                   }`}
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </Link>
+                </button>
               ))}
             </div>
           </div>
@@ -104,12 +118,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <ul className="space-y-2">
                 {navigation.map((item) => (
                   <li key={item.name}>
-                    <Link
-                      to={item.href}
+                    <button
+                      onClick={() => handleNavigation(item.href)}
                       className="text-gray-300 hover:text-white transition-colors"
                     >
                       {item.name}
-                    </Link>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -124,6 +138,16 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </div>
         </div>
       </footer>
+
+      {/* Loading Overlay */}
+      {isLoading && (
+        <div className="fixed inset-0 bg-white/80 backdrop-blur-sm z-[9999] flex items-center justify-center">
+          <div className="text-center">
+            <Loader2 className="h-8 w-8 animate-spin text-blue-600 mx-auto mb-2" />
+            <p className="text-gray-600 text-sm">Loading...</p>
+          </div>
+        </div>
+      )}
 
       {/* WhatsApp Button */}
       <WhatsAppButton />
