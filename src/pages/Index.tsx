@@ -315,12 +315,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Lead Capture Form */}
-      <section id="lead-form" className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <LeadForm />
-        </div>
-      </section>
 
       {/* FAQs */}
       <section className="py-16 bg-gray-50">
