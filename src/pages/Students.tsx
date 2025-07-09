@@ -90,7 +90,7 @@ const Students = () => {
     const message = studentName 
       ? encodeURIComponent(`Hi! I read about ${studentName}'s success story and I'm interested in applying to German public universities. Can you help me?`)
       : encodeURIComponent("Hi! I'm inspired by your success stories and want to start my German university application. Can we discuss my options?");
-    const whatsappUrl = `https://wa.me/923001234567?text=${message}`;
+    const whatsappUrl = `https://wa.me/4915737304219?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -222,7 +222,10 @@ const Students = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={() => window.location.href = '/#lead-form'}
+              onClick={() => {
+                const message = encodeURIComponent("Hi! I'm interested in starting my journey to German public universities. Can you help me?");
+                window.open(`https://wa.me/4915737304219?text=${message}`, '_blank');
+              }}
               className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
             >
               Start Your Journey

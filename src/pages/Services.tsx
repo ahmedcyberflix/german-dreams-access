@@ -77,7 +77,7 @@ const Services = () => {
     const message = service 
       ? encodeURIComponent(`Hi! I'm interested in your ${service} service. Can you provide more details?`)
       : encodeURIComponent("Hi! I'd like to know more about your services for German public university admissions.");
-    const whatsappUrl = `https://wa.me/923001234567?text=${message}`;
+    const whatsappUrl = `https://wa.me/4915737304219?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -131,7 +131,10 @@ const Services = () => {
 
                 <div className="flex flex-col sm:flex-row gap-3">
                   <button
-                    onClick={() => window.location.href = '/#lead-form'}
+                    onClick={() => {
+                      const message = encodeURIComponent("Hi! I'm interested in getting a free assessment for German public universities. Can you help me?");
+                      window.open(`https://wa.me/4915737304219?text=${message}`, '_blank');
+                    }}
                     className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
                   >
                     Get Free Assessment
@@ -265,7 +268,10 @@ const Services = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={() => window.location.href = '/#lead-form'}
+              onClick={() => {
+                const message = encodeURIComponent("Hi! I'm interested in getting a free assessment for German public universities. Can you help me?");
+                window.open(`https://wa.me/4915737304219?text=${message}`, '_blank');
+              }}
               className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
             >
               Get Free Assessment

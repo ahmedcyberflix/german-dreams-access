@@ -150,7 +150,7 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
-                onClick={scrollToForm}
+                onClick={openWhatsApp}
                 className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 Start Your Free Assessment
@@ -350,7 +350,7 @@ const Index = () => {
           <p className="text-xl mb-8">Let's help you too.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={scrollToForm}
+              onClick={openWhatsApp}
               className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
             >
               Start Your Free Assessment

@@ -198,11 +198,14 @@ const LeadForm = ({
         )}
 
         <button
-          type="submit"
-          disabled={isSubmitting}
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md transition-colors duration-200 disabled:opacity-50"
+          type="button"
+          onClick={() => {
+            const message = encodeURIComponent("Hi! I'm interested in getting a free assessment for German public universities. Can you help me?");
+            window.open(`https://wa.me/4915737304219?text=${message}`, '_blank');
+          }}
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md transition-colors duration-200"
         >
-          {isSubmitting ? 'Submitting...' : 'Get Free Assessment'}
+          Get Free Assessment on WhatsApp
         </button>
 
         <p className="text-xs text-gray-500 text-center">

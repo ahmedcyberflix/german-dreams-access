@@ -181,7 +181,10 @@ const About = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={() => window.location.href = '/#lead-form'}
+              onClick={() => {
+                const message = encodeURIComponent("Hi! I'm interested in getting a free assessment for German public universities. Can you help me?");
+                window.open(`https://wa.me/4915737304219?text=${message}`, '_blank');
+              }}
               className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
             >
               Get Free Assessment
