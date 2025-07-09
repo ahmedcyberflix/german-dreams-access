@@ -57,15 +57,6 @@ const Index = () => {
       ]
     },
     {
-      title: "Germany Ausbildung Programs",
-      services: [
-        "Ausbildung Placement in IT, Healthcare",
-        "German Language Training & Visa Support",
-        "Employer Sponsorship Assistance",
-        "Scholarship Assistance & Eligibility Guidance"
-      ]
-    },
-    {
       title: "Germany Skilled Worker Visa",
       services: [
         "Chancenkarte (Opportunity Card)",
