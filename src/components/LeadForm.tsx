@@ -157,7 +157,7 @@ const LeadForm = ({
               value={formData.gpa}
               onChange={handleChange}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="2.5, 3.0, 3.5..."
+              placeholder="2.7, 3.0, 3.5..."
             />
           </div>
 

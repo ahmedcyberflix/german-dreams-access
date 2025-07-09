@@ -18,7 +18,7 @@ const Index = () => {
   const whoWeHelp = [
     { icon: GraduationCap, title: "FSC & A-Level Students", desc: "Fresh graduates ready for their next step" },
     { icon: Users, title: "Bachelor & Master Applicants", desc: "Undergrads and graduates seeking quality education" },
-    { icon: Award, title: "Low GPA Students", desc: "Even with GPA below 2.5, we find solutions" },
+    { icon: Award, title: "Low GPA Students", desc: "Even with GPA below 2.7, we find solutions" },
     { icon: Star, title: "Gap Year Students", desc: "Taking time off doesn't mean giving up dreams" }
   ];
 
@@ -89,7 +89,7 @@ const Index = () => {
       name: "Ahmed Hassan",
       city: "Karachi",
       university: "TU Berlin",
-      gpa: "2.3",
+      gpa: "2.7",
       quote: "I never thought I could get into a German university with my low GPA. Gradziet made it possible!"
     },
     {
@@ -103,14 +103,14 @@ const Index = () => {
       name: "Ali Raza",
       city: "Islamabad",
       university: "University of Stuttgart",
-      gpa: "2.5",
+      gpa: "2.8",
       quote: "Professional, honest, and they deliver what they promise. Highly recommended!"
     }
   ];
 
   const faqs = [
     {
-      question: "Can I get admission with a 2.5 GPA?",
+      question: "Can I get admission with a 2.7 GPA?",
       answer: "Yes! We specialize in helping students with low GPAs. We know which public universities accept lower GPAs and how to strengthen your application."
     },
     {

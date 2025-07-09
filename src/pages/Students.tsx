@@ -11,11 +11,11 @@ const Students = () => {
       city: "Karachi",
       university: "Technical University of Berlin",
       program: "Computer Science",
-      previousGPA: "2.3",
+      previousGPA: "2.7",
       admissionYear: "2023",
       image: "👨‍💻",
       quote: "I never thought I could get into a German university with my low GPA. Gradziet not only helped me get admission but also guided me through the entire visa process. Now I'm studying at one of Germany's top technical universities!",
-      details: "Ahmed had a challenging academic background with a 2.3 GPA from his bachelor's degree. Through our specialized approach, we helped him highlight his practical skills and work experience to secure admission to TU Berlin's competitive Computer Science program."
+      details: "Ahmed had a challenging academic background with a 2.7 GPA from his bachelor's degree. Through our specialized approach, we helped him highlight his practical skills and work experience to secure admission to TU Berlin's competitive Computer Science program."
     },
     {
       id: 2,
@@ -35,7 +35,7 @@ const Students = () => {
       city: "Islamabad",
       university: "University of Stuttgart",
       program: "Automotive Engineering",
-      previousGPA: "2.5",
+      previousGPA: "2.8",
       admissionYear: "2024",
       image: "🚗",
       quote: "Professional, honest, and they deliver what they promise. The team at Gradziet went above and beyond to help me get admission. Their guidance on visa preparation was exceptional. Highly recommended!",
@@ -47,7 +47,7 @@ const Students = () => {
       city: "Faisalabad",
       university: "TU Chemnitz",
       program: "Business Administration",
-      previousGPA: "2.4",
+      previousGPA: "2.7",
       admissionYear: "2024",
       image: "👩‍💼",
       quote: "Coming from a small city, I thought studying abroad was impossible. Gradziet made it happen! They supported me every step of the way, from university selection to visa approval. I'm grateful for their dedication.",
