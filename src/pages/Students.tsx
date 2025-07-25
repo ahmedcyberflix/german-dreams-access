@@ -188,30 +188,6 @@ const Students = () => {
         </div>
       </section>
 
-      {/* Video Testimonials Placeholder */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Video Testimonials</h2>
-            <p className="text-xl text-gray-600">Coming Soon - Hear directly from our students</p>
-          </div>
-
-          <div className="bg-gray-100 rounded-lg p-12 text-center">
-            <div className="text-6xl mb-6">🎥</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Video Testimonials Coming Soon</h3>
-            <p className="text-gray-600 mb-6">
-              We're working on bringing you video testimonials from our students currently studying in Germany. 
-              Stay tuned for their personal stories and experiences!
-            </p>
-            <button
-              onClick={() => openWhatsApp()}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
-            >
-              Get Notified When Available
-            </button>
-          </div>
-        </div>
-      </section>
 
       {/* Call to Action */}
       <section className="py-16 bg-blue-600 text-white">
